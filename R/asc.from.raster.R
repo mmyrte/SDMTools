@@ -49,7 +49,7 @@ asc.from.raster = function(x) {
 	cellsize = (x@extent@ymax-x@extent@ymin)/x@nrows
 	yll = x@extent@ymin + 0.5 * cellsize
 	xll = x@extent@xmin + 0.5 * cellsize
-	tmat = t(matrix(getValues(x),nrow=x@nrows,ncol=x@ncols,byrow=T)[x@nrows:1,])
+	tmat = t(matrix(raster::getValues(x),nrow=x@nrows,ncol=x@ncols,byrow=T)[x@nrows:1,])
 	tmat[which(tmat==x@file@nodatavalue)] = NA
 	return(as.asc(tmat,yll=yll,xll=xll,cellsize=cellsize))
 }
