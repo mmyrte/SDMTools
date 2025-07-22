@@ -8,7 +8,7 @@ vertices are within the polygon.
 #include <R.h> 
 #include <Rinternals.h>
 
-double TWOPI = 2 * PI;
+double TWOPI = 2 * M_PI;
 double epsilon = 0.000000000001; // threshold value
 
 SEXP pip(SEXP pntx, SEXP pnty, SEXP pntn, SEXP polyx, SEXP polyy, SEXP polyn)
